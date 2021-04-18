@@ -15,7 +15,7 @@ app.use(express.json());
 
 //----------------------API Routes----------------------
 
-//Save new note to api(db.json)
+//POST: Save new note to api(db.json)
 app.post('/api/notes', (req, res) => {
 
     const payload = req.body //already a json object
@@ -46,12 +46,14 @@ app.post('/api/notes', (req, res) => {
     });
 });
 
-//Get notes from api (db.json)
+//GET: Retrieve notes from api (db.json)
 app.get('/api/notes', (req, res) => {  
     fs.readFile(path.join(__dirname, 'db', 'db.json'), 'utf8', (error, data) => {
-        error ? console.log(error) : res.json(JSON.parse(data)); //returns json object as the response
+        error ? console.log(error) : res.send(JSON.parse(data)); //returns json object as the response
     });
 });
+
+//DELETE: Delete note from api (db.json)
 
 //-----------------------HTML Routes (GET)-----------------------
 app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'public', 'index.html'))); //Home page
@@ -59,5 +61,5 @@ app.get('/notes', (req, res) => res.sendFile(path.join(__dirname, 'public', 'not
 app.get("*", (req, res) => res.sendFile(path.join(__dirname, 'public', 'index.html'))); //All other URLs go to Home Page
 
 
-// Listener for Server
+//----------------------Listener for Server--------------------------
 app.listen(PORT, () => console.log(`App listening on PORT ${PORT}`));
