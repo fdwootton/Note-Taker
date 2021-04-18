@@ -54,6 +54,28 @@ app.get('/api/notes', (req, res) => {
 });
 
 //DELETE: Delete note from api (db.json)
+app.delete('/api/notes/:id', (req, res) => { //dynamic URL
+
+    fs.readFile(path.join(__dirname, 'db', 'db.json'), 'utf8', (error, data) => {
+        
+        let dataJSON = JSON.parse(data); //convert data into JSON object
+        let chosen = req.params.id;
+        
+        dataJSON = dataJSON.filter((note) => {
+            if (chosen == note.id) {
+            return false; //will delete from dataJSON
+            } else {
+            return true; //will keep note in dataJSON
+            };
+        }); 
+
+        //Overwrite db.json with updated data (chosen note deleted)
+        fs.writeFile(path.join(__dirname, 'db', 'db.json'), JSON.stringify(dataJSON), (error) => {
+        error ? console.log(error) : res.end();
+        })
+    });
+});
+
 
 //-----------------------HTML Routes (GET)-----------------------
 app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'public', 'index.html'))); //Home page
