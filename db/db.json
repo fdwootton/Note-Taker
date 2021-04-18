@@ -1,17 +1,57 @@
 [
   {
-    "title": "afasdf",
-    "text": "aasdfasdf",
-    "id": 0
-  },
-  {
-    "title": "felicia",
-    "text": "wootton",
+    "title": "new note",
+    "text": "new note",
     "id": 1
   },
   {
-    "title": "sfdgdagf",
-    "text": "dxczdfg",
+    "title": "hello",
+    "text": "hello",
     "id": 2
+  },
+  {
+    "title": "hi",
+    "text": "hi",
+    "id": 3
+  },
+  {
+    "title": "bye",
+    "text": "bye",
+    "id": 4
+  },
+  {
+    "title": "pizza",
+    "text": "pizza",
+    "id": 5
+  },
+  {
+    "title": "hola",
+    "text": "hola",
+    "id": 6
+  },
+  {
+    "title": "asfasd",
+    "text": "asdfasdf",
+    "id": 7
+  },
+  {
+    "title": "robto",
+    "text": "robot",
+    "id": 8
+  },
+  {
+    "title": "jump",
+    "text": "jump",
+    "id": 9
+  },
+  {
+    "title": "bark",
+    "text": "bark",
+    "id": 10
+  },
+  {
+    "title": "cake",
+    "text": "cake",
+    "id": 11
   }
 ]
