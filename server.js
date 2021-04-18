@@ -12,12 +12,17 @@ app.use(express.json());
 
 
 
-//API Routes
-app.post('/api/notes', (req, res) => { //Save notes
-    let newNote = JSON.stringify(req.body);
-}); 
+//----------------------API Routes----------------------
 
-app.get('/api/notes', (req, res) => res.sendFile(path.join(__dirname, 'db', 'db.json'))); //Get notes
+//Save new note to api(db.json)
+app.post('/api/notes', (req, res) => {});
+
+//Get notes from api (db.json)
+app.get('/api/notes', (req, res) => {  
+    fs.readFile(path.join(__dirname, 'db', 'db.json'), 'utf8', (error, data) => {
+        error ? console.log(error) : res.json(JSON.parse(data)); //returns json object as the response
+    });
+});
 
 //HTML Routes (GET)
 app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'public', 'index.html'))); //Home page
