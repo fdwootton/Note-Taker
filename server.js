@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const fs = require('fs');
 
 
 const app = express();
@@ -12,11 +13,11 @@ app.use(express.json());
 
 
 //API Routes
-app.get('/api/notes', (req, res) => res.sendFile(path.join(__dirname, 'db', 'db.json'))); //Show notes
-
 app.post('/api/notes', (req, res) => { //Save notes
     let newNote = JSON.stringify(req.body);
 }); 
+
+app.get('/api/notes', (req, res) => res.sendFile(path.join(__dirname, 'db', 'db.json'))); //Get notes
 
 //HTML Routes (GET)
 app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'public', 'index.html'))); //Home page
