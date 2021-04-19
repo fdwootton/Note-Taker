@@ -1,5 +1,5 @@
  # Note Taker
-  ![badge](https://img.shields.io/badge/license-ISC-brightgreen)<br />
+  ![badge](https://img.shields.io/badge/license-MIT-brightgreen)<br />
   ## **Description**
   This application uses back-end technology to allow the user to write, store, and delete notes.
 
@@ -18,8 +18,8 @@
   First, clone the project to your local computer. Run npm i to install all necessary dependencies. Run "node server.js" to start the application. This application is also deployed live on Heroku.
 
   ## **License**
-  ![badge](https://img.shields.io/badge/license-ISC-brightgreen)<br/>
-  This project is covered under the ISC license
+  ![badge](https://img.shields.io/badge/license-MIT-brightgreen)<br/>
+  This project is covered under the MIT license
   
 
   ## **Contributing**
